@@ -11,7 +11,7 @@ import requests
 def get_geocode_zip(zip_code):
     url_geo = 'http://api.openweathermap.org/geo/1.0/zip?'
     query_string_geo = {"zip": zip_code,
-                        "appid": "5744b75256c2234ee31e1b9517e76410"}
+                        "appid": "#################"}
     try:
         response_geo = json.loads(requests.request("GET", url_geo, params=query_string_geo).text)
     except requests.exceptions.ConnectionError:
@@ -29,7 +29,7 @@ def get_geocode_city(city):
     city_state = city + ',' + state
     url_geo = 'http://api.openweathermap.org/geo/1.0/direct?'
     query_string_geo = {"q": city_state,
-                        "appid": "5744b75256c2234ee31e1b9517e76410"}
+                        "appid": "#################"}
     # Checking if our response data is correct, if no city is found then the API returns an empty list
     # so we check for an index error if this is the case. Also check for connection errors and HTTP Errors
     try:
@@ -52,7 +52,7 @@ def get_weather(geocode):
     url = "https://api.openweathermap.org/data/2.5/weather"
     query_string = {"lat": lat,
                     "lon": lon,
-                    "appid": "5744b75256c2234ee31e1b9517e76410"}
+                    "appid": "#################"}
     # Trying to connect to the server, if the connection fails then we return
     # FAILED which is handeled in main
     try:
